@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   get 'calendar_form', to: 'work#calendar_form', as: :calendar_form
+  get 'employee', to: 'employees#index', as: :employee
 
   root "work#index"
 end
