@@ -1,3 +1,4 @@
+<% employee = Employee.last %>
 <div class="container mx-auto px-20">
   <div class="relative overflow-x-auto">
     <div class="bg-white py-24">
@@ -13,6 +14,9 @@
               <div>
                 <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Егор Щербаков</h3>
                 <p class="text-sm font-semibold leading-6 text-indigo-600">Ruby разработчик</p>
+                <p class="mt-1 truncate text-xs leading-5 text-gray-500">Сколько часов отработал в июне: <%= @employee.weeks.count %> часа</p>
+                <p class="mt-1 truncate text-xs leading-5 text-gray-500">Location: Novosibirsk</p>
+                <p class="mt-1 truncate text-xs leading-5 text-gray-500">Time: 22-21</p>
               </div>
             </div>
           </li>
@@ -24,7 +28,7 @@
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
             2023 год
-            <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Июнь</p>
+            <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400"><%= get_month(employee.weeks.first.month) %></p>
         </caption>
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
@@ -48,19 +52,19 @@
           <tbody>
               <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      Понедельник
+                      <%= get_day_of_week(@employee.weeks.first.days.first.day_of_week) %>
                   </th>
                   <td class="px-6 py-4">
-                      Silver
+                      2023.03.03
                   </td>
                   <td class="px-6 py-4">
-                      Laptop
+                      <%= @employee.weeks.first.days.first.work_start %>
                   </td>
                   <td class="px-6 py-4">
-                      $2999
+                      <%= @employee.weeks.first.days.first.work_end %>
                   </td>
                   <td class="px-6 py-4">
-                      $99
+                      8 часов
                   </td>
               </tr>
               <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
