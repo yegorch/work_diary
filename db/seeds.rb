@@ -13,3 +13,13 @@
 #   duration: 60 },
 #   2.7.8 :012 >   { day_of_week: 4, work_start: "10:00", work_end: "19:00", break_
 #   duration: 60 }
+
+
+# employee = Employee.create(name: "Ivan")
+# may_week = employee.weeks.create(number: 1, month: 6, year: 2023)
+# may_week.days.create([
+#   { day_of_week: 1, work_start: "10:00", work_end: "19:00", break_duration: 60 },
+#   { day_of_week: 2, work_start: "10:00", work_end: "19:00", break_duration: 60 },
+#   { day_of_week: 4, work_start: "10:00", work_end: "19:00", break_duration: 60 },
+#   { day_of_week: 5, work_start: "10:00", work_end: "19:00", break_duration: 60 },
+# ])
